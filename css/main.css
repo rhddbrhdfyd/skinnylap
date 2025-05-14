@@ -1,0 +1,421 @@
+  #best {
+  height: 1200px;
+  padding: 0 0 155px;
+    }
+  
+  #best .wrap {
+    width: 1200px;
+    margin: 0 auto;
+  }
+  #best .wrap h2{
+  
+  font-weight: bolder;
+  }
+  #best .productlist {
+    display: flex;
+    gap: 60px;
+    justify-content: space-between;
+    margin-top: 43px;
+    position: relative;
+  }
+  .productlistUp{
+
+  }
+  #best .productlist a{
+
+  }
+  #best .product {
+    position: relative;
+    width: 370px;
+    overflow: hidden;
+    transform: translateY(-22%);
+  }
+  #best .product:nth-child(1){
+
+  transform: translateY(47%);
+  }
+
+#best .card {
+  position: relative;
+  overflow: hidden;
+}
+  
+ #best .card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease;
+}
+  /* 오버레이 추가 */
+  #best .card .overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(to top, rgba(255, 114, 92, .6), rgba(255, 80, 80, .6)), linear-gradient(to top, rgba(255, 131, 106, .6), rgba(255, 80, 80, .6));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none; /* 클릭 막지 않게 */
+  }
+
+  /* hover 시 overlay만 보이게 */
+  #best .product:hover .overlay {
+    opacity: 1;
+  }
+  
+  /* info 영역 */
+   #best .info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+    color: #fff !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+     /* 기본은 숨기기 */
+    transition: opacity 0.4s ease;
+    pointer-events: none; /* 텍스트가 hover 막지 않게 */
+    box-sizing: border-box;
+    gap: 24px 0;
+    opacity: 0;
+  }
+
+  #best .info h3 {
+    font-weight: 700;
+    color: #fff;
+  }
+  
+  #best .info h4 {
+    font-size: 20px;
+    font-weight: bolder;
+    color: #fff;
+  }
+  
+  #best .info p {
+    font-size: 15px;
+    font-weight: 400;
+    color: #fff;
+  }
+  
+  /* hover시 info 나타나기 */
+  #best .product:hover .info {
+    opacity: 1;
+  }
+  
+  /* 가격 정보 */
+  #best .priceinfo {
+  margin-top: 20px;
+  text-align: right;
+  opacity: 0;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  }
+  #best .product:hover .priceinfo {
+    opacity: 1;
+  }
+  
+  #best .priceinfo .original {
+    display: block;
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 17px;
+    font-weight: revert;
+  }
+  
+  #best .priceinfo .original del {
+    color: #ccc;
+  }
+  
+  #best .saleinfo {
+  }
+  
+  #best .saleinfo .discount {
+    font-size: 30px;
+    font-weight: bolder;
+    color: #FF5722;
+  }
+  #best .member{
+
+  font-size: 14px;
+  }
+
+  #best .saleinfo .sale {
+    font-size: 30px;
+    font-weight: 800;
+    color: #333;
+  }
+#best .saleinfo .won{
+  
+  font-size: 15px;
+  font-weight: normal;
+}
+
+/* pick 섹션 */
+#pick {
+  height: 1800px;
+}
+
+#pick .wrap {
+  width: 1280px;
+  margin: 0 auto;
+  padding: 50px 0 0;
+}
+
+/* h2 스타일 */
+#pick .h2 {
+  margin-bottom: 10px;
+  font-weight: bolder;
+}
+
+/* p 스타일 */
+#pick .p {
+  margin-bottom: 75px;
+}
+
+/* 새로 추가하는 부분 (NEW 영역) */
+#pick .pick-header {
+  display: flex;
+  justify-content: space-between;
+   /* 아래쪽에 맞춤 */
+  margin-bottom: 30px; /* 제품 리스트랑 거리 띄움 */
+  position: relative;
+}
+
+#pick .pick-header .left-text {
+  /* 왼쪽 텍스트 영역 (h2 + p) */
+}
+
+#pick .pick-header .sort-select {
+  display: inline-flex;
+  align-items: center;
+  gap: 100px;
+  font-weight: bolder;
+  font-size: 26px;
+  color: #353537;
+  position: absolute;
+  cursor: pointer;
+  padding-bottom: 10px; /* 텍스트랑 밑줄 간격 */
+  right: 1.5%;
+  bottom: 27%;
+  width: 230px;
+  justify-content: space-around;
+}
+#pick .pick-header .sort-select span img{
+  
+  display: block;
+  width: 21px;
+}
+
+/* NEW 밑줄 */
+#pick .pick-header .sort-select::after {
+  content: "";
+  position: absolute;
+  width: 230px;
+  height: 3px;
+  background-color: #353537;
+  bottom: 0;
+  transition: all 0.3s ease; /* 부드러운 전환 */
+}
+#pick .pick-header .sort-select:hover::after {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+}
+
+
+#pick .pick-product {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 80px 40px;
+  
+  grid-template-rows: repeat(2, 700px);
+}
+
+#pick .pick-product figure {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 이미지 감싸는 영역 */
+#pick .pick-product figure .img-wrap {
+  position: relative;
+  overflow: hidden;
+   /* 기본 높이 */
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 370px;
+  height: 370px;
+}
+
+/* 상품 이미지 */
+#pick .pick-product figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+/* hover-icons 초기 상태 (숨김) */
+#pick .pick-product figure .hover-icons {
+  height: 0;
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+/* 아이콘 스타일 */
+#pick .pick-product figure .hover-icons i {
+  font-size: 20px;
+  color: #353537;
+  padding: 8px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* hover 했을 때만 이미지 줄이고 hover-icons 보이게 */
+#pick .pick-product figure:hover .img-wrap {
+  height: 370px; /* 높이 그대로 유지 */
+}
+
+#pick .pick-product figure:hover img {
+  height: 320px; /* 이미지만 줄임 */
+}
+
+#pick .pick-product figure:hover .hover-icons {
+  height: 80px; /* 아이콘바 공간 확보 */
+  opacity: 1;
+}
+
+#pick .pick-product figure figcaption {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: -webkit-left;
+  height: 280px;
+}
+
+#pick .pick-product figure figcaption .badge {
+  display: inline-block;
+  background: #353537;
+  color: #fff;
+  font-size: 14px;
+  padding: 7px 11px;
+  border-radius: 3px;
+  margin-bottom: 6px;
+  width: 42px;
+}
+#pick .pick-product figure:nth-child(2) figcaption .badge{
+  background: #ff725c;
+}
+
+#pick .pick-product figure figcaption .bg .badge:nth-of-type(2){
+   background: #ff725c;
+}
+
+#pick .pick-product figure figcaption .pproduct-info {
+  margin-top: 10px;
+}
+
+#pick .pick-product figure figcaption .pproduct-info .title {
+  font-size: 22px;
+  font-weight: bolder;
+  margin: 10px 0;
+}
+
+#pick .pick-product figure figcaption .pproduct-info .tag {
+  font-size: 15px;
+  color: #6e6e72;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  display: block;
+  font-weight: 500;
+}
+
+#pick .pick-product figure figcaption .pproduct-info .ppricing {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 5px;
+  text-align: end;
+}
+#pick .pick-product figure:nth-child(2) figcaption .pproduct-info .ppricing{
+  margin-top: 42px;
+}
+#pick .pick-product figure:nth-child(3) figcaption .pproduct-info .ppricing{
+  align-items: end;
+  display: flex;
+  flex-direction: column;
+  margin-top: 106px;
+}
+#pick .pick-product figure:nth-child(n+4):nth-child(-n+5) figcaption .pproduct-info .ppricing{
+  margin-top: 42px;
+}
+
+#pick .pick-product figure:nth-child(6) figcaption .pproduct-info .psaleinfo{
+  
+  margin-top: 124px;
+}
+#pick .pick-product figure figcaption .pproduct-info .ppricing .poriginal{
+  color: #999;
+  font-size: 15px;
+  font-weight: 600;
+}
+#pick .pick-product figure figcaption .pproduct-info .ppricing .poriginal del {
+  color: #bbb;
+}
+
+#pick .pick-product figure figcaption .pproduct-info .ppricing .pmember {
+  display: block;
+  font-weight: bold;
+  color: #353537;
+  margin-top: 16px;
+}
+
+#pick .pick-product figure figcaption .pproduct-info .ppricing .psaleinfo {
+  display: flex;
+  justify-content: end;
+  align-items: baseline;
+  gap: 5px;
+}
+
+#pick .pick-product figure figcaption .pproduct-info .ppricing .psaleinfo .pdiscount {
+  color: #FF3C3C;
+  font-weight: bold;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+#pick .pick-product figure figcaption .pproduct-info .ppricing .psaleinfo .psale {
+  font-size: 30px;
+  font-weight: bolder;
+  color: #353537;
+}
+
+#pick .pick-product figure figcaption .pproduct-info .ppricing .psaleinfo .won {
+  font-size: 16px;
+  color: #353537;
+}
+
+#pick .pick-product figure figcaption .pproduct-info .psaleinfo {
+  /* 가격만 있는 경우 */
+  justify-content: end;
+  gap: 5px;
+  display: flex;
+  align-items: first baseline;
+}
+
+#pick .pick-product figure   .pproduct-info .psaleinfo .psale {
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+#pick .pick-product figure figcaption .pproduct-info .psaleinfo .won {
+  font-size: 16px;
+}
+

@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스키니랩</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/title.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/aside.css">
+    
+    <!-- 구글폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Noto+Sans+KR:wght@100..900&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="js/jquery-3.7.1.js"></script>
+
+    <!-- 폰트어썸 라이브러리리 -->
+    <script src="https://kit.fontawesome.com/c9fddc3a45.js" crossorigin="anonymous"></script>
+
+    <!-- 타이틀 slick.js-->
+    <link rel="stylesheet" type="text/css" href="js/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="js/slick/slick-theme.css"/>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="js/slick/slick.min.js"></script>
+    <script>
+    $(document).ready(function(){ 
+        $('.titleslick').slick({
+            autoplay: true,         // 자동 재생 (슬라이드가 자동으로 넘어감)
+            arrows: true,           // 좌우 화살표 네비게이션 표시
+            dots: true,             // 도트 네비게이션 표시
+            infinite: true,         // 무한 반복 (슬라이드 끝에 도달하면 처음으로 돌아감)
+            autoplaySpeed: 3000,             // 슬라이드 넘어가는 속도 (500ms)
+            cssEase: 'linear',      // 슬라이드 애니메이션 속도 변화 설정 (linear: 일정한 속도로)
+            appendDots: '.slick--visual__paging',
+            customPaging: function (slider, i) {
+                return  '<span>0'+(i+1)+'</span><span>/</span><span>0'+slider.slideCount+'</span>';
+                }
+            });
+            // 슬라이드 숫자 표시
+            const visual = $('.titleslick');
+            const progress = $('.visual__progress');
+
+            // 초기 진행률
+            const initPercent = 100 / visual.find('.slick-slide').length;
+            progress.css('background-size', initPercent + '% 100%');
+
+            // 슬라이드 변경 시 진행률 계산
+            visual.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+            var calc = ((nextSlide + 1) / slick.slideCount) * 100;
+            progress
+                .css('background-size', calc + '% 100%')
+                .attr('aria-valuenow', calc);
+            });
+
+            // 재생/정지 버튼
+            let isPaused = false;
+
+            $('#slick-toggle').on('click', function () {
+            if (isPaused) {
+                $('.titleslick').slick('slickPlay');
+                $(this).html(`
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                    <rect x="6" y="5" width="2" height="14"/>
+                    <rect x="14" y="5" width="2" height="14"/>
+                </svg>
+                `);
+            } else {
+                $('.titleslick').slick('slickPause');
+                $(this).html(`
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                    <polygon points="6,4 20,12 6,20"/>
+                </svg>
+                `);
+            }
+            isPaused = !isPaused;
+            });
+            //스크롤하면 
+        });
+    </script>
+    <script>
+        $(document).ready(function(){
+            appreance = () => {
+                $(" #best .wrap .productlist").addClass("productlistUp");
+            }
+        });
+    </script>
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        $(document).ready(function(){
+            AOS.init();
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="flex">
+            <h1 class="h4"><a href=#><img src="./img/svg/logo.svg" alt="로고"></a></h1>
+            <div class=" wrap gnb kf">
+                <ul class="flex">
+                    <li><a href=# class="block">🔥베스트</a></li>
+                    <li><a href=# class="block">고민별</a></li>
+                    <li><a href=# class="block">원료별</a></li>
+                    <li><a href=# class="block">커뮤니티</a></li>
+                    <li><a href=# class="block">전체상품</a></li>
+                </ul>
+                <div class="subnav">
+                    <div class="wrap">
+                        <ul class="flex">
+                            <li class="list">
+                                <ul class="sub">
+                                    <li><a href="#">실시간 베스트</a></li>
+                                    <li><a href=#>다이어트·슬림</a></li>
+                                    <li><a href=#>이너뷰티</a></li>
+                                    <li><a href=#>건강보충</a></li>
+                                </ul>
+                            </li>
+                            <li class="list">
+                                <ul class="sub">
+                                    <li><a href=#>가르시니아 </a></li>
+                                    <li><a href=#>모로실·시서스 </a></li>
+                                    <li><a href=#>다이글로핏·락토페린 </a></li>
+                                    <li><a href=#>잔티젠·콜레우스포스콜리 </a></li>
+                                    <li><a href=#>애플페논·시네트롤·레몬밤 </a></li>
+                                    <li><a href=#>발효효소·차전자피 </a></li>
+                                    <li><a href=#>붓기차·콤부차 </a></li>
+                                    <li><a href=#>유산균·비타민</a></li>
+                                    <li><a href=#>비오틴 맥주효모 </a></li>
+                                    <li><a href=#>레티놀 글루타치온 </a></li>
+                                    <li><a href=#>기타</a></li>
+                                </ul>
+                            </li>
+                            <li class="list">
+                                <ul class="sub">
+                                    <li><a href=#>공지사항</a></li>
+                                    <li><a href=#>상품리뷰</a></li>
+                                    <li><a href=#>1:1문의</a></li>
+                                    <li><a href=#></a>스키니랩 브랜드</li>
+                                    <li><a href=#>수출·대량 구매 문의</a></li>
+                                </ul>
+                            </li>
+                            <li class="list">
+                                <ul class="sub">
+                                    <li><a href=#>다이어트</a></li>
+                                    <li><a href=#>이너뷰티</a></li>
+                                    <li><a href=#>천지양</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="menu flex">
+                <ul>
+                    <li><a href=# class="block">Login </a></li>
+                    <li><a href=# class="block">Join <p>전제품20%할인</p></a></li>
+                    <li><a href=# class="block">Cart</a></li>
+                    <li><a href=#><img src="./img/svg/search1.svg" alt="검색"></a></li>
+                    <li><a href=#><img src="./img/svg/menu1.svg" alt="메뉴바"></a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div id="title">
+        <div class="wrap banner">
+            <button id="slick-toggle" aria-label="재생/일시정지">
+                <!-- 기본 상태는 pause -->
+                <svg id="pause-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                    <rect x="6" y="5" width="2" height="14"/>
+                    <rect x="14" y="5" width="2" height="14"/>
+                </svg>
+                </button>
+                
+            <ul class="titleslick">
+                <li class="flex-column  titlelist t1">
+                    <h2 class="h2">이지슬리밍 잔티젠
+                        잠들기 전 1포</h2>
+                    <p class="p">기능성 원료 잔티젠
+                    체지방 감소+기초대사량 증가 확인!</p>
+                    <a href="#" class="detail-btn">자세히보기</a>
+                </li>
+                <li class="flex-column  titlelist t2">
+                    <h2 class="h2">가르시니아
+                        HCA 1,000mg 섭취</h2>
+                    <p class="p">탄수화물 지방 전환 억제
+                        하루 1포 간편하게 다이어트</p>
+                    <a href="#" class="detail-btn">자세히보기</a>
+                </li>
+                <li class="flex-column  titlelist t3">
+                    <h2 class="h2">탄수화물 컷팅 다이어트
+                        마시는 가르시니아 다이어트</h2>
+                    <p class="p">맛있는 블루레몬맛🍋
+                        탄수화물 CUT 체지방 DOWN</p>
+                    <a href="#" class="detail-btn">자세히보기</a>
+                </li>
+                <li class="flex-column titlelist t4">
+                    <h2 class="h2">시원하게 비우고 체지방까지 컷!
+                        차전자피 카테킨 다이어트</h2>
+                    <p class="p">다이어트하면서 배변활동 걱정은 그만
+                        1일 2포로 콜레스테롤 관리까지</p>
+                        <a href="#" class="detail-btn">자세히보기</a>
+                </li>
+            </ul>
+            <div class="slick--visual__paging"></div>
+            <div class="visual__progress" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="membership wrap">
+                <ul>
+                    <li>신규 회원가입시</li>
+                    <li>신규가입 <span>20</span>% </li>
+                    <li>신제품 <span>10 </span>%</li>
+                    <li> 재구매시 <span>10</span>% <span>/</span></li>
+                    <li>  <span>5</span>회 무료배송까지! </li>
+                    <a href=#><span>HB</span>멤버십</a>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <main>
+        <section id="best">
+            <div class="wrap">
+                <h2 class="h2">best seller</h2>
+                <p class="p">다이어트의 새로운 방법 ,<br> 
+                    베스트셀러 제품을 확인하세요.</p>
+                <div class="productlist">
+                    <article class="product">
+                        <a href="">
+                            <div class="card">
+                                <img src="./img/best2.jpg" alt="제품1">
+                                <div class="overlay"></div> 
+                            </div>
+                            
+                            <div class="info">
+                                <h3 class="p">스키니랩 락토페린<br>
+                                    다이어트</h3>
+                                <h4>스키니랩 락토페린 다이어트</h4>
+                                <p>몸매 관리의 기초 건강기능식품</p>
+                            </div>
+                            <div class="priceinfo"> 
+                                <span class="original">비회원가 <del>120,000원</del></span>
+                                <span class="member">회원가</span>
+                                <div class="saleinfo">
+                                <span class="discount">51%</span>
+                                <span class="sale">59,900</span><span class="won">원</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="product">
+                        <a href="">
+                            <div class="card">
+                                <img src="./img/best1.jpg" alt="제품2">
+                                <div class="overlay"></div> 
+                            </div>
+                            <div class="info">
+                                <h3 class="p">이지슬리밍 잔티젠 다이어트</h3>
+                                <h4>이지슬리밍 잔티젠 다이어트</h4>
+                                <p>#잠들기 전 1포 <br>
+                                    #체지방 관리</p>
+                            </div>
+                            <div class="priceinfo">
+                                <span class="original">비회원가 <del>130,000원</del></span>
+                                <span class="member">회원가</span>
+                                <div class="saleinfo">
+                                <span class="discount">50%</span>
+                                <span class="sale">65,000</span><span class="won">원</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>          
+        <section id="pick">
+            <div class="wrap">
+              <div class="pick-header">
+                <div class="left-text">
+                  <h2 class="h2">skinny lab's pick</h2>
+                  <p class="p">다이어트를 연구하는<br>스키니랩이 추천하는 제품을 만나보세요.</p>
+                </div>
+                <div class="sort-select">
+                  <span>NEW</span>
+                  <span><img src="./img/svg/180arrow.svg" alt="arrow"></span>
+                </div>
+              </div>
+                <div class="pick-product">
+                    <figure>
+                        <a href=#>
+                            <div class="img-wrap">
+                                <img src="./img/pick1.jpg" alt="제품 이미지" />
+                                <div class="hover-icons">
+                                  <i class="fa-regular fa-heart"></i>
+                                  <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                              </div>
+                            <figcaption>
+                                <span class="badge">신제품</span>
+                                <div class="pproduct-info">
+                                    <p class="title">포켓쏙 공복젤 (2주)</p>
+                                    <span class="tag">#다이어트  #젤리  #스키니랩  #신제품  #공복젤  #공복<br>
+                                        #포켓쏙  #공복젤리  #복숭아  #복숭아맛  #저당  #혈당<br>
+                                        #혈당관리  #간식  #간식젤리  #간식대용 </span>
+                                    <div class="ppricing">
+                                        <span class="poriginal">비회원가 <del>23,000원</del></span>
+                                        <span class="pmember">회원가</span>
+                                        <div class="psaleinfo">
+                                        <span class="pdiscount">24%</span>
+                                        <span class="psale">17,500</span><span class="won">원</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure>
+                        <a href=#>
+                            <div class="img-wrap">
+                                <img src="./img/pick2.jpg" alt="제품 이미지" />
+                                <div class="hover-icons">
+                                  <i class="fa-regular fa-heart" style="color: #353537;"></i>
+                                  <i class="fa-solid fa-cart-shopping" style="color: #353537;"></i>
+                                </div>
+                              </div>
+                            <figcaption>
+                                <span class="badge">베스트</span>
+                                <div class="pproduct-info">
+                                    <p class="title">래피드 솔루션 다이어트 (1개월)</p>
+                                    <span class="tag">#스키니랩  #다이어트  #가르시니아캄보지아<br>
+                                        #래피드솔루션</span>
+                                    <div class="ppricing">
+                                        <span class="poriginal">비회원가 <del>70,000원</del></span>
+                                        <span class="pmember">회원가</span>
+                                        <div class="psaleinfo">
+                                        <span class="pdiscount">6%</span>
+                                        <span class="psale">65,900</span><span class="won">원</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </figcaption>
+                            </a>
+                    </figure>
+                    <figure>
+                        <a href=#>
+                            <div class="img-wrap">
+                                <img src="./img/pick3.jpg" alt="제품 이미지" />
+                                <div class="hover-icons">
+                                  <i class="fa-regular fa-heart"></i>
+                                  <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                              </div>
+                            <figcaption>
+                                <span class="badge">신제품</span>
+                                <div class="pproduct-info">
+                                    <p class="title">가르시니아 핏카페 (2주)</p>
+                                    <div class="ppricing">
+                                        <span class="poriginal">비회원가 <del>52,000원</del></span>
+                                        <span class="pmember">회원가</span>
+                                        <div class="psaleinfo">
+                                        <span class="pdiscount">14%</span>
+                                        <span class="psale">45,000</span><span class="won">원</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure>
+                        <a href=#>
+                            <div class="img-wrap">
+                                <img src="./img/pick4.jpg" alt="제품 이미지" />
+                                <div class="hover-icons">
+                                  <i class="fa-regular fa-heart"></i>
+                                  <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                              </div>
+                            <figcaption>
+                                <span class="badge">신제품</span>
+                                <div class="pproduct-info">
+                                    <p class="title">샤이닝 톤업 부스터 (2주)</p>
+                                    <span class="tag">#스키니랩  #이너뷰티  #톤업부스터  #프리미엄원료<br>
+                                        #비라이트  </span>
+                                    <div class="ppricing">
+                                        <span class="poriginal">비회원가 <del>36,000원</del></span>
+                                        <span class="pmember">회원가</span>
+                                        <div class="psaleinfo">
+                                        <span class="pdiscount">12%</span>
+                                        <span class="psale">32,000</span><span class="won">원</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure>
+                        <a href=#>
+                            <div class="img-wrap">
+                                <img src="./img/pick5.jpg" alt="제품 이미지" />
+                                <div class="hover-icons">
+                                  <i class="fa-regular fa-heart"></i>
+                                  <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                            </div>
+                            <figcaption>
+                                <span class="badge">신제품</span>
+                                <div class="pproduct-info">
+                                    <p class="title">레드핏 나이트 다이어트 (2주)</p>
+                                    <span class="tag">#스키니랩  #다이어트  #체지방감소  #자기전한포<br>
+                                        #스트레스완화</span>
+                                    <div class="ppricing">
+                                        <span class="poriginal">비회원가 <del>26,000원</del></span>
+                                        <span class="pmember">회원가</span>
+                                        <div class="psaleinfo">
+                                        <span class="pdiscount">12%</span>
+                                        <span class="psale">23,000</span><span class="won">원</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </figcaption>
+                        </a>
+                    </figure>
+                    <figure>
+                        <a href=#>
+                            <div class="img-wrap">
+                                <img src="./img/pick6.jpg" alt="제품 이미지" />
+                                <div class="hover-icons">
+                                  <i class="fa-regular fa-heart"></i>
+                                  <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                              </div>
+                            <figcaption>
+                            <span class="bg">
+                                <span class="badge">신제품</span>
+                                <span class="badge">베스트</span>
+                            </span>
+                            <div class="pproduct-info">
+                                <p class="title">먹는 레티놀C 부스터 (1개월)</p>
+                                <span class="tag">#스키니랩  #이너뷰티  #레티놀  #먹는레티놀  #비타민C</span>
+                                <div class="psaleinfo">
+                                    <span class="psale">34,000</span><span class="won">원</span>
+                                </div>
+                            </div>
+                            </figcaption>
+                        </a>
+                    </figure>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="footer">
+        <div class="wrap">
+      
+            <div class="footer-menu">
+                <ul>
+                <li><a href="#">이용약관</a></li>
+                <li><a href="#">개인정보처리방침</a></li>
+                <li><a href="#">이용안내</a></li>
+                <li><a href="#">수출·대량 구매 문의</a></li>
+                </ul>
+            </div>
+      
+            <div class="footer-content">
+                <div class="c1">
+                    <img src="../개별코딩/img/logo-footer.png" alt="헬스밸런스 로고" class="logo">
+                    <address>
+                        <p>상호명 : 헬스밸런스(주)</p>
+                        <p>서울특별시 영등포구 영신로 220(KnKC디지털타워) 1502,1503호</p>
+                        <p>대표자 : 김효석 &nbsp; 개인정보관리책임자 : 장은영</p>
+                        <p>사업자등록번호 : 314-81-84285 사업자정보확인</p>
+                        <p>통신판매업 : 2025-서울영등포-0521</p>
+                        <p>대표전화 : 1644-7267 &nbsp; FAX : 02-2071-3699</p>
+                        <p>E-mail : hbmall@hbalance.co.kr</p>
+                    </address>
+                </div>
+      
+                <div class="c2">
+                <h2>1644-7267</h2>
+                <ul>
+                    <li>평일(주말제외) <strong>09:30 ~ 18:00</strong></li>
+                    <li>점심시간 <strong>12:30 ~ 13:30</strong></li>
+                </ul>
+                <p class="notice">※ 토/일/공휴일 휴무</p>
+                </div>
+      
+                <div class="c3">
+                    <div class="payment-logos">
+                        <img src="./img/svg/inipay1.svg" alt="이니페이 로고">
+                        <img src="./img/svg/inipay2.svg" alt="에스크로 로고">
+                    </div>
+                    <p class="payment-text">
+                        KG이니시스가 제공하는 결제시스템을<br>
+                        사용하고 있는 쇼핑몰임을 확인하여<br>
+                        소비자들은 안심하고 결제할 수 있습니다.
+                    </p>
+                </div>
+            </div>
+            <div class="footer-family">
+                <div class="family-site">
+                <span>Family Site</span>
+                <span><img src="./img/svg/180arrow-w.svg" alt="arrow"></span>
+                </div>
+                <div class="family-line"></div>
+            </div>
+        </div>
+    </footer>
+    <aside>
+        <ul>
+            <li><a href="#" class="now">now</a></li>
+            <li><a href="#" class="talk">TALK</a></li>
+            <li><a href="#" class="cart">장바구니</a></li>
+            <li><a href="#" class="top">TOP</a></li>
+        </ul>
+    </aside>
+      
+</body>
+</html>

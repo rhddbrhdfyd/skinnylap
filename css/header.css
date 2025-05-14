@@ -1,0 +1,159 @@
+header{
+    height: 124px;
+    background-color: rgba(255, 255, 255, 0.9);
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    /*! max-width: 1280px; */
+}
+header nav{
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 50px 55px 18px;
+    height: 100%;
+    position: relative;
+    box-shadow: 5px 0 20px #b7b7b79c;
+    width: ;
+}
+header nav h1{
+
+}
+header nav h1 a{
+    width: 190px;
+    margin-top: 8px;
+}
+
+header nav h1 a span{
+
+}
+
+header nav .gnb{
+    
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    position: absolute;
+    left: 37%;
+}
+header nav .gnb ul{
+    gap: 50px;
+    font-weight: bold;
+}
+header nav .gnb ul:hove .subnav {
+    
+}
+header nav .gnb ul li{
+
+}
+header nav .gnb ul li a{
+    
+    font-size: 21px;
+}
+header nav .gnb ul li a:hover{
+    color: #ff725c;
+}
+header nav .gnb .subnav {
+    /* subnav 스타일 */
+    display: none;
+}
+
+header nav .gnb .subnav div {
+    /* 서브 메뉴 div 스타일 */
+}
+
+header nav .gnb .subnav div ul {
+    /* 서브 메뉴 ul 스타일 */
+}
+
+header nav .gnb .subnav div ul li {
+    /* 서브 메뉴 항목 li 스타일 */
+}
+
+header nav .gnb .subnav div ul li ul {
+    /* 서브 메뉴의 서브 메뉴 ul 스타일 */
+}
+
+header nav .gnb .subnav div ul li ul li a {
+    /* 서브 메뉴의 서브 메뉴 항목 링크 스타일 */
+}
+header nav .menu{
+
+}
+header nav .menu ul{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-right: 15px;
+}
+header nav .menu ul li{
+    position: relative;
+}
+
+header nav .menu ul li:nth-child(2) a{
+    position: relative;
+}
+header nav .menu ul li:nth-child(3){
+    margin-right: 25px;
+}
+header nav .menu ul li a{
+    
+    font-weight: bolder;
+    font-size: 15px;
+    text-align: center;
+}
+header nav .menu ul li a:hover{
+      color: #ff725c;
+}
+header nav .menu ul li:nth-child(3) a{
+    
+}
+header nav .menu ul li:nth-child(3) a::before{
+    
+    content: "0";
+    width: 25px;
+    display: flex;
+    height: 25px;
+    background-color: #ff725c;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 17px;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 13px;
+    left: 33px;
+    font-weight: inherit;
+}
+header nav .menu ul li:nth-child(n+4):nth-child(-n+5) a{
+    width: 28px;
+    height: 28px;
+}
+header div h1{
+    
+}
+
+header nav .menu ul li a p{
+    
+    position: absolute;
+    width: 105px;
+    top: -40px;
+    font-weight: bold;
+    right: -39px;
+    display: flex;
+    justify-content: center;
+}
+header nav .menu ul li a p::before{
+    background-image: url(../img/svg/180arrow.svg);
+    content: "";
+    font-size: 14px;
+    height: 12px;
+    width: 15px;
+     background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: block;
+     position: absolute;
+    right: 44%;
+    top: 23px;
+}

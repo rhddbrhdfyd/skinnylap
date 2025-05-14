@@ -1,0 +1,23 @@
+html,body,section{
+  height: 100%;
+}
+*{
+  padding: 0;
+  margin: 0;
+}
+h1,h2,h3,h4,h5,h6,p{
+  font-weight: normal;
+  font-size: 100%;
+  color: #353537;
+}
+ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+  color:#353537;
+}
+address{
+  font-style: normal;
+  width: 300px;
+}
