@@ -234,6 +234,7 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  width: 370px;
 }
 
 /* 이미지 감싸는 영역 */
